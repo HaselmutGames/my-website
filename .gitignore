@@ -1,4 +1,4 @@
-test-results
+# Node modules
 node_modules
 
 # Output
@@ -9,16 +9,32 @@ node_modules
 /.svelte-kit
 /build
 
-# OS
+# OS and IDE files
 .DS_Store
 Thumbs.db
+.vscode
+.idea/
+*.swp
 
 # Env
 .env
 .env.*
+.env.local
+.env.*.local
 !.env.example
 !.env.test
 
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing frameworks (Playwright)
+static/microdata
+/test-results/
+/playwright-report/
+/playwright/.cache/
