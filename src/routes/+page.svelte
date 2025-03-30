@@ -11,24 +11,27 @@
     <div class="headline">
         <a href="/" class="headline-link">{headline}</a>
     </div>
-    <!-- Icons-->
+    <!-- Icons with labels (stacked)-->
      <div class="icon-links">
         {#each icons as icon}
-            <a href={icon.url} class="icon">
-                {icon.emoji}
-            </a>
-            <p> {icon.name}</p>
+            <div class="icon-item">
+                <a href={icon.url} class="icon">
+                    {icon.emoji}
+                </a>
+                <a href={icon.url} class="icon-label">
+                    {icon.name}
+                </a>
+            </div>
         {/each}
      </div>
-
     <h1>{question}</h1>
     <p>{bio}</p>
 
     <!-- Social Links -->
-    <ul>
+    <ul class="social-links">
         {#each socials as social}
             <li>
-                <a href={social.url} target="_blank">
+                <a href={social.url} target="_blank" class="social-link">
                     {social.name}
                 </a>
             </li>
@@ -53,10 +56,6 @@
         color: orange;
         font-size: 2em;
     }
-    .headline {
-        color: orange;
-        font-size: 2rem;
-    }
     .headline-link {
         text-decoration: none;
         color: orange;
@@ -65,23 +64,39 @@
     .headline-link:hover {
         text-decoration: underline;
     }
+
+    /* Icon Section*/
     .icon-links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
         margin: 20px 0;
     }
-    .icon {
-        font-size: 1.5rem;
-        margin: 0 10px;
-        text-decoration: none;
+    .icon-item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-    .icon:hover {
+    .icon, .icon-label {
+        text-decoration: none;
+        color: white;
+        font-size: 1.5rem;
+        margin: 5px 0;
+    }
+    .icon:hover, .icon-label:hover {
+        color: orange;
+        cursor: pointer;
         opacity: 0.8;
     }
-    ul {
-        list-style: none;
+
+    /* Social Links */
+    .social-link {
+        text-decoration: none;
+        color: white;
+        font-size: 1.2rem;
         padding: 0;
     }
-    li {
-        display: inline;
-        margin: 0 10px;
+    .social-link:hover {
+        color: orange;
     }
 </style>
