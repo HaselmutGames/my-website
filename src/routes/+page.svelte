@@ -1,9 +1,9 @@
 <script lang="ts">
     import { icons } from '$lib/data/icons';
     import { socials } from '$lib/data/socials';
-    let headline = "HaselmutGames.com";
+    let headline = "HaselmutGames";
     let question = "Who am I?";
-    let bio = "I'm Hammoud, a Software Developer aspiring to become a Game Developer.🧑‍💻🎮"
+    let bio = "I'm Hammoud (he/him), a software developer aspiring to become a game developer🧑‍💻🎮for my HaselmutGames video game studio. I studied computer science for 3 years in Germany and then started an apprenticeship/working for a company."
 </script>
 
 <main class="container">
