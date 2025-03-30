@@ -1,22 +1,30 @@
 <script lang="ts">
+    import { icons } from '$lib/data/icons';
+    import { socials } from '$lib/data/socials';
     let headline = "HaselmutGames.com";
     let question = "Who am I?";
     let bio = "I'm Hammoud, a Software Developer aspiring to become a Game Developer.🧑‍💻🎮"
-    let socials = [
-        { name: "GitHub", url: "https://github.com/HaselmutGames" },
-        { name: "Twitch", url: "https://www.twitch.tv/haselmutgames" },
-        { name: "YouTube", url: "https://www.youtube.com/@HaselmutGames" },
-        { name: "X", url: "https://x.com/HaselmutGames" },
-    ];
 </script>
 
 <main class="container">
+    <!-- Clickable Headline -->
     <div class="headline">
-        <h1>{headline}</h1>
+        <a href="/" class="headline-link">{headline}</a>
     </div>
+    <!-- Icons-->
+     <div class="icon-links">
+        {#each icons as icon}
+            <a href={icon.url} class="icon">
+                {icon.emoji}
+            </a>
+            <p> {icon.name}</p>
+        {/each}
+     </div>
+
     <h1>{question}</h1>
     <p>{bio}</p>
 
+    <!-- Social Links -->
     <ul>
         {#each socials as social}
             <li>
@@ -31,7 +39,7 @@
 <style>
     :global(html){
         font-family: 'Courier New', Courier, monospace;
-        background-color: black;
+        background-color: grey;
         color: white;
         margin: 0;
         padding: 0;
@@ -43,12 +51,36 @@
     }
     .headline{
         color: orange;
+        font-size: 2em;
     }
-    ul{
+    .headline {
+        color: orange;
+        font-size: 2rem;
+    }
+    .headline-link {
+        text-decoration: none;
+        color: orange;
+        font-weight: bold;
+    }
+    .headline-link:hover {
+        text-decoration: underline;
+    }
+    .icon-links {
+        margin: 20px 0;
+    }
+    .icon {
+        font-size: 1.5rem;
+        margin: 0 10px;
+        text-decoration: none;
+    }
+    .icon:hover {
+        opacity: 0.8;
+    }
+    ul {
         list-style: none;
         padding: 0;
     }
-    li{
+    li {
         display: inline;
         margin: 0 10px;
     }
