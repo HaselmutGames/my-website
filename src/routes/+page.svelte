@@ -61,7 +61,8 @@
     }
     .container{
         text-align: center;
-        margin-top: 50px;  
+        margin-top: 50px;
+        font-weight: bold;
     }
     .headline{
         color: orange;
