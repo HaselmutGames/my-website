@@ -3,7 +3,9 @@
     import { socials } from '$lib/data/socials';
     let headline = "HaselmutGames";
     let question = "Who am I?";
-    let bio = "I'm Hammoud (he/him), a software developer aspiring to become a game developer🧑‍💻🎮for my HaselmutGames video game studio. I studied computer science for 3 years in Germany and then started an apprenticeship/working for a company."
+    let bio = "I am Hammoud (he/him), a software developer aspiring to become a game developer🧑‍💻🎮for my HaselmutGames video game studio. At the University I studied computer science for 3 years in Germany and then started an apprenticeship/working for a company."
+    let experience_title = "What do I do?";
+    let experience = "I am familiar with both Backend- and Frontend-Frameworks Spring Boot and Angular. In addition, I have worked on several Python projects in laser technology and process development as well as in the development of platforms for analytics and data insights."
 </script>
 
 <main class="container">
@@ -12,7 +14,7 @@
         <a href="/" class="headline-link">{headline}</a>
     </div>
     <!-- Icons with labels (stacked)-->
-     <div class="icon-links">
+    <div class="icon-links">
         {#each icons as icon}
             <div class="icon-item">
                 <a href={icon.url} class="icon">
@@ -23,9 +25,14 @@
                 </a>
             </div>
         {/each}
-     </div>
-    <h1>{question}</h1>
-    <p>{bio}</p>
+    </div>
+    <div class="all-about-me">
+        <h1>{question}</h1>
+        <p>{bio}</p>
+        <h1>{experience_title}</h1>
+        <p>{experience}</p>
+    </div> 
+    <br>
 
     <!-- Social Links -->
     <ul class="social-links">
