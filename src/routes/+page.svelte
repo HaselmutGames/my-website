@@ -37,11 +37,11 @@
     <!-- Social Links -->
     <ul class="social-links">
         {#each socials as social}
-            <li>
+            <div>
                 <a href={social.url} target="_blank" class="social-link">
                     {social.name}
                 </a>
-            </li>
+            </div>
         {/each}
     </ul>
 </main>
