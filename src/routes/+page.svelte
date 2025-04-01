@@ -15,10 +15,20 @@
 </script>
 
 <main class="container">
+    <!-- Social Links -->
+    <div class="social-links">
+        {#each socials as social}
+            <a href={social.url} target="_blank" class="social-link">
+                {social.name}
+            </a>
+        {/each}
+    </div>
+
     <!-- Clickable Headline -->
     <div class="headline">
         <a href="/" class="headline-link">{headline}</a>
     </div>
+    
     <!-- About Section-->
     <div class="icon-item">
         <a href={icons[0].url} class="icon-label">
@@ -47,17 +57,6 @@
 
     </div> 
     <br>
-
-    <!-- Social Links -->
-    <ul class="social-links">
-        {#each socials as social}
-            <div>
-                <a href={social.url} target="_blank" class="social-link">
-                    {social.name}
-                </a>
-            </div>
-        {/each}
-    </ul>
 </main>
 
 <style>
@@ -99,9 +98,8 @@
         font-size: 1.5rem;
     }
     .icon-label:hover {
-        color: orange;
+        color: rgba(255, 165, 0);
         cursor: pointer;
-        opacity: 0.8;
     }
 
     .div-titles{
@@ -109,13 +107,25 @@
     }
 
     /* Social Links */
+    .social-links {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        padding: 10px 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(255, 165, 0, 0.7);
+        backdrop-filter: blur(5px);
+        z-index: 1000;
+    }
     .social-link {
         text-decoration: none;
         color: white;
         font-size: 1.2rem;
-        padding: 0;
     }
     .social-link:hover {
-        color: orange;
+        color: rgb(85, 50, 30);
     }
 </style>
