@@ -1,6 +1,7 @@
 <script lang="ts">
     import { icons } from '$lib/data/icons';
     import { socials } from '$lib/data/socials';
+    // About Section
     let headline = "HaselmutGames";
     let question = "Who am I?";
     let bio = "I am Hammoud (he/him), a software developer aspiring to become a game developer🧑‍💻🎮for my HaselmutGames video game studio. At the University I studied computer science for 3 years in Germany and then started an apprenticeship/working for a company."
@@ -8,6 +9,9 @@
     let experience = "I am familiar with both Backend- and Frontend-Frameworks Spring Boot and Angular. In addition, I have worked on several Python projects in laser technology and process development as well as in the development of platforms for analytics and data insights."
     let game_dev_title = "Game-Dev";
     let game_dev_section = "I have always been fascinated by video games so I decided to start learning more about the process of making them. I started learning game development trying to gather as much input as possible while streaming the process live hoping to build a cool community to share my journey and passion with.";
+
+    // Projects Section
+    
 </script>
 
 <main class="container">
@@ -15,18 +19,12 @@
     <div class="headline">
         <a href="/" class="headline-link">{headline}</a>
     </div>
-    <!-- Icons with labels (stacked)-->
-    <div class="icon-links">
-        {#each icons as icon}
-            <div class="icon-item">
-                <a href={icon.url} class="icon">
-                    {icon.emoji}
-                </a>
-                <a href={icon.url} class="icon-label">
-                    {icon.name}
-                </a>
-            </div>
-        {/each}
+    <!-- About Section-->
+    <div class="icon-item">
+        <a href={icons[0].url} class="icon-label">
+            {icons[0].emoji}
+            {icons[0].name}
+        </a>
     </div>
     <div class="all-about-me">
         <h1 class="div-titles">{question}</h1>
@@ -35,6 +33,18 @@
         <p>{experience}</p>
         <h1 class="div-titles">{game_dev_title}</h1>
         <p>{game_dev_section}</p>
+    </div> 
+    <br>
+
+    <!-- Projects Section-->
+    <div class="icon-item">
+        <a href={icons[1].url} class="icon-label">
+            {icons[1].emoji}
+            {icons[1].name}
+        </a>
+    </div>
+    <div>
+
     </div> 
     <br>
 
@@ -77,32 +87,25 @@
         text-decoration: underline;
     }
 
-    /* Icon Section*/
-    .icon-links {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        margin: 20px 0;
-    }
+    /* Icon Section */
     .icon-item{
-        display: flex;
-        flex-direction: column;
+        display: inline-flex;
         align-items: center;
+        margin: 20px;
     }
-    .icon, .icon-label {
+    .icon-label {
         text-decoration: none;
         color: white;
         font-size: 1.5rem;
-        margin: 5px 0;
     }
-    .icon:hover, .icon-label:hover {
+    .icon-label:hover {
         color: orange;
         cursor: pointer;
         opacity: 0.8;
     }
 
     .div-titles{
-        color: rgb(184, 27, 184);
+        color: rgb(248, 220, 63);
     }
 
     /* Social Links */
