@@ -19,6 +19,7 @@
     <div class="social-links">
         {#each socials as social}
             <a href={social.url} target="_blank" class="social-link">
+                <svelte:component this={social.icon} size="24" stroke-width="1.5" /> 
                 {social.name}
             </a>
         {/each}
@@ -28,7 +29,7 @@
     <div class="headline">
         <a href="/" class="headline-link">{headline}</a>
     </div>
-    
+
     <!-- About Section-->
     <div class="icon-item">
         <a href={icons[0].url} class="icon-label">
